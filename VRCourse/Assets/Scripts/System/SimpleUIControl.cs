@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -5,52 +6,40 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class SimpleUIControl : MonoBehaviour
 {
     //Serialized Fields
-    [Header("Interactables")]
     [SerializeField]
-    ButtonInteractable buttonInteractable;
+    ProgressControl progressControl;
 
-    [SerializeField]
-    GameObject keyInteractableLight;
 
     [Header("String Handling")]
 
     [SerializeField]
-    string[] messageStrings;
-
-    [SerializeField]
     TMP_Text[] messageTexts;
 
-    //Called before first frame update
-    void Awake()
+    private void OnEnable()
     {
-        //Tell button interactable to list to method when it is selected
-        if (buttonInteractable != null)
+        if (progressControl != null)
         {
-            buttonInteractable.selectEntered.AddListener(ButtonInteractablePressed);
+            progressControl.OnStartGame.AddListener(StartGame);
+            progressControl.OnChallengeComplete.AddListener(ChallengeComplete);
         }
     }
 
-    
-    
+    private void ChallengeComplete(string arg0)
+    {
+        SetText(arg0);
+    }
+
+    private void StartGame(string arg0)
+    {
+        SetText(arg0);
+    }
+
     public void SetText(string message)
     {
         //Update all text elements that should change when button is pressed.
         for (int i = 0; i < messageTexts.Length; i++)
         {
             messageTexts[i].text = message;
-        }
-    }
-
-
-
-    //Method for when button is pressed
-    void ButtonInteractablePressed(SelectEnterEventArgs arg0)
-    {
-        //Temportaty array assignment
-        SetText(messageStrings[1]);
-        if (keyInteractableLight != null)
-        {
-            keyInteractableLight.SetActive(true);
         }
     }
 }
