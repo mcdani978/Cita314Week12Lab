@@ -154,7 +154,7 @@ private void OnDestroyWallCube()
                 keyInteractableLight.SetActive(true);
             }
 
-            if (challengeNum < challengeStrings.Length)
+            if (challengeNum < challengeStrings.Length && challengeNum == 0)
             {
                 OnStartGame?.Invoke(challengeStrings[challengeNum]);
             }
@@ -177,6 +177,23 @@ private void OnDestroyWallCube()
         }
     }
 
+    private void OnDrawerSocketed(SelectEnterEventArgs arg0)
+    {
+        if(challengeNum == 0)
+        {
+            ChallengeComplete();
+        }
+        
+    }
+
+    private void OnDrawerDetatch()
+    {
+        if(challengeNum == 1)
+        {
+            ChallengeComplete();
+        }
+    }
+
     void SetDrawerInteractable()
     {
         if (drawer != null)
@@ -192,13 +209,7 @@ private void OnDestroyWallCube()
         }
 }
 
-    private void OnDrawerDetatch()
-    {
-        ChallengeComplete();
-    }
 
-    private void OnDrawerSocketed(SelectEnterEventArgs arg0)
-    {
-        ChallengeComplete();
-    }
+
+
 }
