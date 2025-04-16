@@ -9,6 +9,10 @@ using UnityEngine.Events;
 public class NavMeshRobot : MonoBehaviour
 {
     public UnityEvent OnDestroyWallCube;
+    [SerializeField] AudioClip collisionClip;
+
+    public AudioClip GetCollisionClip()=> collisionClip;
+
     NavMeshAgent agent; 
     void Start()
     {

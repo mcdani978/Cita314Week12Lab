@@ -30479,6 +30479,8 @@ MonoBehaviour:
   comboLock: {fileID: 701791830}
   wall: {fileID: 331346949}
   wallSound: {fileID: 0}
+  joystick: {fileID: 1154177948}
+  robot: {fileID: 2786145338084541818}
   backgroundMusic: {fileID: 9481279}
   backgroundMusicClip: {fileID: 8300000, guid: 05e7b4c0f2b9bc947841b51337f4d5b9, type: 3}
   fallBackClip: {fileID: 0}
@@ -46518,6 +46520,7 @@ MonoBehaviour:
   comboLock: {fileID: 701791830}
   keyInteractableLight: {fileID: 1479153692}
   startGameString: Press the Button!
+  endGameString: Are you Happy its's Over??
   challengeStrings:
   - Now find the key and unlock the drawer!
   - Hold button down to detatch drawer & find the wand
@@ -46526,9 +46529,13 @@ MonoBehaviour:
   - Find Want & blow up the wall
   - Activate LIghts in Library
   - All Challenges Completed
+  - Find The Joystick To Control The Robot To Destroy 10 Wall Cubes
+  wallCubesToDestroy: 0
   wall: {fileID: 331346949}
   teleportationAreas: {fileID: 1141315649}
+  challengeNum: 7
   librarySlider: {fileID: 712958798}
+  robot: {fileID: 2786145338084541818}
 --- !u!4 &1442458572
 Transform:
   m_ObjectHideFlags: 0
@@ -70980,6 +70987,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 080de1ef572a2784cb45ffec3d649959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnDestroyWallCube:
+    m_PersistentCalls:
+      m_Calls: []
+  collisionClip: {fileID: 8300000, guid: 79f0548b92e2b2c48a00514b4f9aa04a, type: 3}
 --- !u!4 &2832575498609724830
 Transform:
   m_ObjectHideFlags: 0
