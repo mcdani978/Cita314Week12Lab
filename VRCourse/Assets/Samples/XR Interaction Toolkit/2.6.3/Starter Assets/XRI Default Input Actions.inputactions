@@ -1116,6 +1116,17 @@
                     "action": "Snap Turn",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a648355d-d829-4389-8701-cffe5cfd913c",
+                    "path": "<MetaAimHand>{LeftHand}/indexPressed",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Teleport Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -1910,6 +1921,28 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Snap Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b5ae5e99-0b25-472f-8269-e384fef36956",
+                    "path": "<MetaAimHand>{RightHand}/indexPressed",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Teleport Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dcec5bc9-e7b3-4a1c-91b6-51fad4b0a1b3",
+                    "path": "<MetaAimHand>{RightHand}/indexPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Teleport Select",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
